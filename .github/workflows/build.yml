@@ -53,4 +53,4 @@ jobs:
 
       - name: 'State'
         run: find .
-        working-directory: '${{ runner.workspace }}
+        working-directory: '${{ runner.workspace }}'
