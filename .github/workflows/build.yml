@@ -47,3 +47,7 @@ jobs:
       - name: 'State'
         run: find .
         working-directory: '${{ runner.workspace }}'
+        
+      - name: 'Check deps'
+        run: ldd ${{ runner.workspace }}/b/ninja/examples/bw64_read_write
+
