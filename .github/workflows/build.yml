@@ -52,4 +52,4 @@ jobs:
         run: ldd ${{ runner.workspace }}/b/ninja/examples/bw64_read_write
 
       - name: 'Package and start run'
-        run: docker run -v ${{ runner.workspace }}/b/ninja/examples/bw64_read_write:/bw64_read_write -t forallsecure/mcode-cli sh -c "mayhem package /bw64_read_write -o /tmp/bw64"
+        run: docker run -v /lib/x86_64-linux-gnu/:/lib/x86_64-linux-gnu/ -v ${{ runner.workspace }}/b/ninja/examples/bw64_read_write:/bw64_read_write -t forallsecure/mcode-cli sh -c "mayhem package /bw64_read_write -o /tmp/bw64"
