@@ -52,7 +52,7 @@ jobs:
           -e MAYHEM_URL=${{ secrets.MAYHEM_URL }}
           -e MAYHEM_TOKEN=${{ secrets.MAYHEM_TOKEN }}
           -t forallsecure/mcode-cli:1.14
-          sh -c 'mayhem stop -n forallsecure libbw64/libbw64; run=`mayhem run /tmp/package --corpus https://${{ secrets.MAYHEM_URL }}/forallsecure/libbw64/libbw64/corpus.tar?defects_only=true`; echo $run; mayhem wait $run --sarif /tmp/package/report.sarif'
+          sh -c 'mayhem stop -n forallsecure libbw64/libbw64; run=`mayhem run /tmp/package --corpus ${{ secrets.MAYHEM_URL }}/forallsecure/libbw64/libbw64/corpus.tar?defects_only=true`; echo $run; mayhem wait $run --sarif /tmp/package/report.sarif'
 
       - name: 'Continuous Fuzzing'
         run: >-
