@@ -1,4 +1,5 @@
 project: ${GITHUB_REPOSITORY}
 target: libbw64
+baseimage: ubuntu
 cmds:
 - cmd: /libbw64 @@ /dev/null
