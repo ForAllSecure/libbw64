@@ -44,13 +44,6 @@ jobs:
         run: ctest . --output-on-failure
         working-directory: '${{ runner.workspace }}/b/ninja'
 
-      - name: 'State'
-        run: find .
-        working-directory: '${{ runner.workspace }}'
-        
-      - name: 'Check deps'
-        run: ldd ${{ runner.workspace }}/b/ninja/examples/bw64_read_write
-
       - name: 'Continuous Fuzzing'
         run: >-
           docker run 
@@ -60,4 +53,4 @@ jobs:
           -e MAYHEM_URL=${{ secrets.MAYHEM_URL }}
           -e MAYHEM_TOKEN=${{ secrets.MAYHEM_TOKEN }}
           -t forallsecure/mcode-cli:1.14
-          sh -c "ls /tmp/* -l; mayhem stop forallsecure/libbw64; mayhem run /tmp"
+          sh -c "mayhem stop forallsecure/libbw64; mayhem run /tmp"
