@@ -1,0 +1,4 @@
+project: ${GITHUB_REPOSITORY}
+target: libbw64
+cmds:
+- cmd: /libbw64 @@ /dev/null
