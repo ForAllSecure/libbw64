@@ -51,7 +51,7 @@ jobs:
       - name: 'Check deps'
         run: ldd ${{ runner.workspace }}/b/ninja/examples/bw64_read_write
 
-      - name: 'Package and start run'
+      - name: 'Continuous Fuzzing'
         run: >-
           docker run 
           -v ${{ runner.workspace }}/libbw64/fuzz/Mayhemfile:/tmp/Mayhemfile
