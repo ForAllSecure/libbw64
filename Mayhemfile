@@ -3,4 +3,4 @@ project: forallsecure/libbw64
 target: libbw64
 baseimage: ubuntu
 cmds:
-- cmd: /libbw64 @@ /dev/null
+- cmd: /bw64_read_write @@ /dev/null
