@@ -1,3 +1,4 @@
+version: '1.14'
 project: ${GITHUB_REPOSITORY}
 target: libbw64
 baseimage: ubuntu
