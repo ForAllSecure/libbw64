@@ -58,6 +58,5 @@ jobs:
           -v ${{ runner.workspace }}/b/ninja/examples/bw64_read_write:/tmp/root/bw64_read_write
           -e MAYHEM_URL=${{ secrets.MAYHEM_URL }}
           -e MAYHEM_TOKEN=${{ secrets.MAYHEM_TOKEN }}
-          -e GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
           -t forallsecure/mcode-cli:1.14
           sh -c "ls /tmp/* -l; mayhem run /tmp"
