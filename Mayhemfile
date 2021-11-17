@@ -1,5 +1,5 @@
 version: '1.14'
-project: ${GITHUB_REPOSITORY}
+project: forallsecure/libbw64
 target: libbw64
 baseimage: ubuntu
 cmds:
