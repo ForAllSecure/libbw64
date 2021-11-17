@@ -1,6 +1,6 @@
 version: '1.14'
 project: forallsecure/libbw64
 target: libbw64
-baseimage: ubuntu
+baseimage: ubuntu:latest
 cmds:
 - cmd: /bw64_read_write @@ /dev/null
