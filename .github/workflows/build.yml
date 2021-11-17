@@ -54,6 +54,7 @@ jobs:
       - name: 'Package and start run'
         run: >-
           docker run 
+          -v /lib/x86_64-linux-gnu/:/tmp/root/lib/x86_64-linux-gnu/ 
           -v ${{ runner.workspace }}/libbw64/Mayhemfile:/tmp/Mayhemfile
           -v ${{ runner.workspace }}/b/ninja/examples/bw64_read_write:/tmp/root/bw64_read_write
           -e MAYHEM_URL=${{ secrets.MAYHEM_URL }}
