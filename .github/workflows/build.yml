@@ -54,9 +54,9 @@ jobs:
       - name: 'Package and start run'
         run: >-
           docker run 
-          -v /lib/x86_64-linux-gnu/:/lib/x86_64-linux-gnu/ 
-          -v ${{ runner.workspace }}/b/ninja/examples/bw64_read_write:/bw64_read_write
+          -v ${{ runner.workspace }}/Mayhemfile:/Mayhemfile
+          -v ${{ runner.workspace }}/b/ninja/examples/bw64_read_write:/root/bw64_read_write
           -e MAYHEM_URL=${{ secrets.MAYHEM_URL }}
           -e MAYHEM_TOKEN=${{ secrets.MAYHEM_TOKEN }}
           -t forallsecure/mcode-cli
-          sh -c "mayhem package /bw64_read_write -o /tmp/bw64 && mayhem run /tmp/bw64"
+          sh -c "mayhem run /"
