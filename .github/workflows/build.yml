@@ -54,6 +54,11 @@ jobs:
           -t forallsecure/mcode-cli:1.14
           sh -c 'mayhem stop -n forallsecure libbw64/libbw64; run=`mayhem run /tmp/package --regression --corpus ${{ secrets.MAYHEM_URL }}/forallsecure/libbw64/libbw64/corpus.tar?defects_only=true`; echo $run; mayhem wait -n forallsecure $run --sarif /tmp/package/report.sarif'
 
+      - name: 'Upload SARIF report'
+        uses: actions/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: fuzz/report.sarif
+
       - name: 'Continuous Fuzzing'
         run: >-
           docker run 
