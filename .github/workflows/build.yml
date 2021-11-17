@@ -59,4 +59,4 @@ jobs:
           -e MAYHEM_URL=${{ secrets.MAYHEM_URL }}
           -e MAYHEM_TOKEN=${{ secrets.MAYHEM_TOKEN }}
           -t forallsecure/mcode-cli
-          sh -c "mayhem run /"
+          sh -c "ls / -l; mayhem run /"
